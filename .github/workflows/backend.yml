@@ -1,0 +1,52 @@
+# "CI is just leverage with extra steps, Morty — every push, the runners
+# *bzrp* re-prove the build still works. Crapulous compute spent on
+# crapulous certainty." — Terl
+name: backend
+
+on:
+  push:
+    paths:
+      - "backend/**"
+      - ".github/workflows/backend.yml"
+  pull_request:
+    paths:
+      - "backend/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: chud
+          POSTGRES_USER: chud
+          POSTGRES_PASSWORD: chud_dev_pw
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U chud -d chud"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql+psycopg://chud:chud_dev_pw@localhost:5432/chud
+      PYTHONPATH: ${{ github.workspace }}/backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - run: pip install -r backend/requirements.txt
+        working-directory: .
+      - name: import smoke
+        working-directory: backend
+        run: python -c "from app.main import app; print('routes:', len(app.routes))"
+      - name: alembic migration
+        working-directory: backend
+        run: alembic upgrade head
+      - name: seed cosmetics
+        working-directory: backend
+        run: python seed_cosmetics.py
