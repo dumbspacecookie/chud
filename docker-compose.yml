@@ -1,0 +1,60 @@
+# "Postgres on 5433, redis on 6380, frontend on 3030 because every default
+# port in the multiverse was already claimed by some other man-animal's
+# stash of kerbango. Crapulous fools at Docker should've left more head-
+# room." — Terl, port allocator, terminally online
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: chud
+      POSTGRES_USER: chud
+      POSTGRES_PASSWORD: chud_dev_pw
+    ports:
+      - "5433:5432"
+    volumes:
+      - chud_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chud -d chud"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6380:6379"
+
+  backend:
+    build: ./backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    environment:
+      DATABASE_URL: postgresql+psycopg://chud:chud_dev_pw@postgres:5432/chud
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET: dev_only_jwt_secret_change_me
+      ENVIRONMENT: dev
+      PYTHONPATH: /app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    command: sh -c "alembic upgrade head && python seed_cosmetics.py && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    depends_on:
+      - backend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3030:3000"
+    volumes:
+      - ./frontend:/app
+    command: sh -c "npm install && npm run dev"
+
+volumes:
+  chud_pgdata:

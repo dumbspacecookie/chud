@@ -1,0 +1,39 @@
+# dependencies
+node_modules/
+.pnpm-store/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# next
+.next/
+out/
+
+# env
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# dist
+build/
+dist/
+*.egg-info/
+
+# os
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+.idea/
+
+# alembic
+backend/app/migrations/versions/__pycache__/
+
+# logs
+*.log
+
+# postgres data via docker-compose volume
+pgdata/
