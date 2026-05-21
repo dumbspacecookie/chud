@@ -7,6 +7,7 @@ from app.models.social import Friendship, Block
 from app.models.streak import Streak
 from app.models.alignment import AlignmentEvent
 from app.models.live import Stream
+from app.models.waitlist import WaitlistEntry
 
 __all__ = [
     "User",
@@ -22,4 +23,5 @@ __all__ = [
     "Streak",
     "AlignmentEvent",
     "Stream",
+    "WaitlistEntry",
 ]

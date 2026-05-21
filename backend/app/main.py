@@ -15,6 +15,9 @@ from app.controllers import (
     leaderboard_controller,
     capsule_controller,
     battle_controller,
+    friends_controller,
+    inventory_controller,
+    waitlist_controller,
     health_controller,
 )
 
@@ -44,6 +47,9 @@ app.include_router(scan_controller.router)
 app.include_router(leaderboard_controller.router)
 app.include_router(capsule_controller.router)
 app.include_router(battle_controller.router)
+app.include_router(friends_controller.router)
+app.include_router(inventory_controller.router)
+app.include_router(waitlist_controller.router)
 
 
 @app.get("/")

@@ -5,8 +5,15 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { useEffect } from "react";
+import { useAuth } from "@/lib/auth";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const refresh = useAuth((s) => s.refresh);
+  useEffect(() => {
+    refresh();
+  }, [refresh]);
+
   return (
     <>
       <Head>
