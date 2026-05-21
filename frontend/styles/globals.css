@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #050505;
+  color: #FFFBE6;
+  font-family: 'Inter', system-ui, sans-serif;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Disable text selection on touchy game UI */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Hide scrollbars on overlays */
+.hide-scroll::-webkit-scrollbar { display: none; }
+.hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Brand display */
+.brand-mark {
+  font-family: 'Anton', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+}
