@@ -16,7 +16,7 @@
 1. "spent the day shipping a face-scanning AR game called chud. it's going to be problematic. and it's going to spread."
 2. "the entire source code of our app is narrated by a fictional psychlo from battlefield earth named terl. real engineering choice."
 3. "wrote a dual-mode camera ux in one swipe gesture. swipe up = glaze, swipe down = chud. a child can learn it in 4 seconds. that's the bar."
-4. "ai-generated boilerplate doesn't ship in this repo. every line passes through a human. you can tell. it has *personality*."
+4. "every comment in this codebase was written by a guy. you can tell. it has personality. the function names alone are gonna get me sued by someone."
 5. "today i implemented an append-only wallet ledger. the comment in the code says 'every L is a scar across the multiverse'. i stand by this."
 6. "built the alignment-percentage state machine today. saint at one end, crashout king at the other. profile bar slides. ux is just a meter."
 7. "shipped the friend graph. mutual-friendship is required before you can drop a fedora on someone's face. trust and safety baked in at the api layer."

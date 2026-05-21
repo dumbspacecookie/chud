@@ -15,7 +15,7 @@ Drop-in materials for the spread playbook. Files in this dir:
 - never use the word "we" — speak as ash (founder)
 - never explain mechanics — show, don't tell
 - never apologize for the brand name. own it.
-- never AI-coded copy. if it sounds like ChatGPT, rewrite.
+- read every post out loud. if it sounds like a marketing committee wrote it, rewrite.
 - 1 emoji per post max, never two
 
 ## posting cadence (first 30 days)

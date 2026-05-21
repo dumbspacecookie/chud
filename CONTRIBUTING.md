@@ -17,7 +17,7 @@ cd frontend && npm install && npm run dev
 
 ## ground rules
 - **lowercase** by default in copy. capital letters mean drama.
-- **never** add an AI/Claude/Anthropic thumbprint anywhere. Not in comments, not in commits, not in dependency graphs.
+- every line of code passes through a human. tone-match the existing voice. if it doesn't sound like the rest of the repo, rewrite.
 - match the [brand voice](docs/BRAND.md). The Terl quotes in source are *the* tone reference.
 - new mechanics get added to [docs/MECHANICS.md](docs/MECHANICS.md) first, then code.
 - new endpoints get e2e curl'd in the PR description. no e2e proof, no merge.
@@ -31,4 +31,4 @@ cd frontend && npm install && npm run dev
 - backwards-compat shims for stuff we just changed
 - abstractions before we have three concrete uses
 - "for the future" toggles
-- AI-generated boilerplate (we will know)
+- generic boilerplate. read it out loud — if it could sit in any repo, it doesn't belong in this one.

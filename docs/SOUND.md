@@ -78,4 +78,4 @@ Sound is 40% of the dopamine. Every interaction needs a sound. Treat audio spec 
 ## Voice (V2 — not at launch)
 - Hype hype-man VO during battles ("BRO IS GETTING COOKED")
 - Goblin commentary for chud-mode streams
-- AI-generated, opt-in, cycle through 5-10 lines per event to avoid repetition
+- pre-recorded VO pack, opt-in, cycle through 5-10 lines per event to avoid repetition

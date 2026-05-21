@@ -10,5 +10,5 @@ seven dimensions." — Terl -->
 **checklist**
 - [ ] tsc clean (frontend)
 - [ ] backend imports + new endpoints curl-tested
-- [ ] no AI/Claude trace anywhere in diff
-- [ ] dumbspacecookie attribution preserved
+- [ ] voice + tone match the rest of the repo (read your diff out loud)
+- [ ] commits attributed to a real handle, no co-authors

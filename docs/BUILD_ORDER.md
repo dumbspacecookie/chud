@@ -116,7 +116,7 @@ The order things ship. Each milestone is a working slice, not a layer.
 - TikTok Live RTMP (when 1k+ followers)
 - Native wrappers (Capacitor or react-native)
 - Cashout flow for creators (Stripe Connect, KYC, 18+, regulatory review)
-- AI-generated daily Aura Readings
+- Daily Aura Readings (Co-Star-style horoscopes, template + RNG)
 - Compatibility scores between users
 - Geo-bonus Rizz Spots (admin-mappable)
 - Squad chat
